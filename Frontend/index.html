@@ -22,7 +22,7 @@
    <div id="app">
       <small id="Server">Server: {{ server }}</small>
       <p>Update Setting Values</p>
-      <p>Temperature:<input v-model="temperatureSV" style="width: 50px">Humidity:<input v-model="humiditySV" ></p>
+      <p>Temperature:<input v-model="temperatureSV" style="width: 50px">Humidity:<input v-model="humiditySV" style="width: 50px"></p>
       <p><button @click="updateSV">Update</button></p>
       <template v-if="develop">
          <p>{{ SVs }}</p>
