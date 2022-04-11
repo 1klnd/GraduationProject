@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>Vue</title>
+   <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
+   <script src="https://code.highcharts.com.cn/jquery/jquery-1.8.3.min.js"></script>
+   <script src="https://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+   <script src="https://cdn.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+   <script src="https://cdn.highcharts.com.cn/highcharts/modules/data.js"></script>
+   <script src="https://cdn.highcharts.com.cn/highcharts/modules/series-label.js"></script>
+   <script src="https://cdn.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+   <script src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+   <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+</head>
+
+<body>
+   <style>
+      p {text-align:center}
+   </style>
+   <div id="app">
+      <small id="Server">Server: {{ server }}</small>
+      <p>Update Setting Values</p>
+      <p>Temperature:<input v-model="temperatureSV" style="width: 50px">Humidity:<input v-model="humiditySV" ></p>
+      <p><button @click="updateSV">Update</button></p>
+      <template v-if="develop">
+         <p>{{ SVs }}</p>
+         <button @click="getSVs">GetSV</button>
+         <p>{{ MVs }}</p>
+         <button @click="getMVs">GetMV</button>
+         <button @click="refresh">Refresh</button>
+      </template>
+   </div>
+
+   <div id="container-tem" style="min-width:400px;height:400px"></div>
+   <div id="container-hum" style="min-width:400px;height:400px"></div>
+   <div class="message"></div>
+
+
+   <script src="./app.js"></script>
+   <script src="./chart-tem.js"></script>
+   <script src="./chart-hum.js"></script>
+</body>
+
+</html>
